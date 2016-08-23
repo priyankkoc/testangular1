@@ -98,6 +98,20 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
+:: 3. Install bower components
+IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
+  pushd "%DEPLOYMENT_TARGET%"
+  call .\node_modules\.bin\bower install
+  IF !ERRORLEVEL! NEQ 0 goto error
+  popd
+)
+
+IF EXIST "%DEPLOYMENT_TARGET%" (
+  pushd "%DEPLOYMENT_TARGET%"
+  call .\node_modules\.bin\gulp --env development
+  IF !ERRORLEVEL! NEQ 0 goto error
+  popd
+)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
