@@ -1,2 +1,2 @@
 [config]
-command = deploy-qa.cmd
+command = deploy-dev.cmd
