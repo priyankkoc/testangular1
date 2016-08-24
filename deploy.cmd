@@ -104,6 +104,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
+echo installing bower components
 :: 4. Install bower components 
 IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
   pushd "%DEPLOYMENT_TARGET%"
@@ -112,6 +113,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
   popd
 )
 :: 5. Running GULP task
+echo running gulp
 IF EXIST "%DEPLOYMENT_TARGET%" (
   pushd "%DEPLOYMENT_TARGET%"
   call .\node_modules\.bin\gulp --env development 
