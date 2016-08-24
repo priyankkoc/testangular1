@@ -109,7 +109,6 @@ IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
 IF EXIST "%DEPLOYMENT_TARGET%" (
   pushd "%DEPLOYMENT_TARGET%"
   call .\node_modules\.bin\gulp --env development
-  console.log("%test%")
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
