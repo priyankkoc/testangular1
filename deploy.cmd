@@ -105,6 +105,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 echo installing bower components
+echo "%SITE_FLAVOR%"
 :: 4. Install bower components 
 IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
   pushd "%DEPLOYMENT_TARGET%"
