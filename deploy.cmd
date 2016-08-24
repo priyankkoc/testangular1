@@ -116,7 +116,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
 echo running gulp
 IF EXIST "%DEPLOYMENT_TARGET%" (
   pushd "%DEPLOYMENT_TARGET%"
-  call .\node_modules\.bin\gulp --env development 
+  call .\node_modules\.bin\gulp --env dev 
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
